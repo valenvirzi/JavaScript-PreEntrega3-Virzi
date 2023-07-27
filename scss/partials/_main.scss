@@ -1,0 +1,227 @@
+body {
+    display: flex;
+    justify-content: center;
+    padding: 5rem clamp(0.5rem, 1.2%, 2rem);
+    background-color: $bg-primary-color;
+
+    @import "./colorPicker";
+
+    .main {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 1rem;
+        min-height: 120dvh;
+        width: 100%;
+        padding: 0rem clamp(0.5rem, 1.2%, 2rem);
+
+        .main__account {
+            position: absolute;
+            top: -3.5rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            row-gap: 0.5rem;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(255, 255, 255, 0.2);
+
+            .main__account-h2 {
+                font-size: clamp(1.1rem, 2vw, 1.7rem);
+                font-weight: 600;
+
+                .main__account-h2-span {}
+            }
+        }
+
+        .main__client {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: repeat(5, auto);
+            width: 100%;
+            font-size: clamp(1rem, 1.5vw, 1.7rem);
+            line-height: clamp(1.8rem, 2.65vw, 3.25rem);
+            row-gap: 0.25rem;
+
+            .main__client-input {
+                padding: 0rem clamp(0.45rem, 0.9vw, 1.5rem);
+                border: 1px solid $primary-color;
+                border-radius: 8px;
+            }
+
+            [type="date"] {
+                margin-left: auto;
+                width: fit-content;
+                padding: 0.15rem;
+                text-align: center;
+                font-weight: 600;
+                border: 1px solid $primary-color;
+                background-color: rgb(121, 148, 164, 0.6);
+                color: $primary-color;
+            }
+
+            [type="text"] {
+                background-color: rgb(255, 255, 255, 0.25);
+            }
+        }
+
+        .main__products {
+            display: grid;
+            grid-template-columns: clamp(4.025rem, 18.4%, 100rem) clamp(8.38rem, 38.3%, 100rem) clamp(4.17rem, 19.1%, 100rem) clamp(5.3rem, 24.2%, 100rem);
+            grid-template-rows: repeat($product-list-rows, auto);
+            width: 100%;
+            overflow: hidden;
+            text-align: center;
+            border: 1px solid $primary-color;
+            border-radius: 8px;
+
+            .main__products-h3 {
+                font-size: clamp(1rem, 1.5vw, 1.7rem);
+                line-height: 2.25rem;
+                font-weight: 600;
+                border-bottom: 1px solid $primary-color;
+                border-right: 1px solid $primary-color;
+                color: $primary-color;
+            }
+
+            .main__products-container {
+                grid-column: span 4;
+            }
+
+            .main__products-div {
+                grid-column: span 4;
+                display: grid;
+                grid-template-columns: clamp(4.025rem, 18.4%, 100rem) clamp(8.38rem, 38.3%, 100rem) clamp(4.17rem, 19.1%, 100rem) clamp(5.3rem, 24.2%, 100rem);
+                grid-template-rows: auto;
+            }
+
+            .main__products-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                font-size: clamp(1rem, 1.5vw, 1.7rem);
+                font-weight: 600;
+                background-color: rgb(121, 148, 164, 0.6);
+            }
+
+            .main__products-item-span {
+                letter-spacing: 1px;
+                border-bottom: 1px solid $primary-color
+            }
+
+            [type="number"],
+            [type="text"] {
+                height: auto;
+                padding: 0rem clamp(0.1rem, 5%, 1rem);
+                text-overflow: clip;
+                overflow-wrap: break-word;
+                font-size: clamp(1rem, 1.38vw, 1.7rem);
+                line-height: clamp(1.8rem, 2.65vw, 3.25rem);
+                ;
+                font-weight: 500;
+                border: none;
+                border-bottom: 1px solid $primary-color;
+                border-right: 1px solid $primary-color;
+                background-color: rgb(255, 255, 255, 0.25);
+            }
+
+            .main__products-btn {
+                grid-column: span 4;
+                height: clamp(1.8rem, 2.65vw, 3.25rem);
+                font-size: clamp(1rem, 1.5vw, 1.7rem);
+                font-weight: 600;
+                border: none;
+                border-bottom: 1px solid $primary-color;
+                background-color: transparent;
+                color: rgb(0, 0, 0, 0.5);
+            }
+
+
+            .main__products-item-h3 {
+                grid-column: 1 / 4;
+                padding: 0rem clamp(0.1rem, 5%, 1rem);
+                font-size: clamp(1rem, 1.5vw, 1.7rem);
+                font-weight: 600;
+                line-height: clamp(1.8rem, 2.65vw, 3.25rem);
+                text-align: left;
+                color: $primary-color;
+                border: none;
+                border-bottom: 1px solid $primary-color;
+                border-right: 1px solid $primary-color;
+            }
+
+            .d-none {
+                display: none;
+            }
+        }
+
+        .main__info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0.5rem;
+
+            .main__info-section {
+                display: flex;
+                width: 100%;
+                font-size: clamp(1rem, 1.5vw, 1.7rem);
+                font-weight: 600;
+
+                .main__info-h2 {}
+
+                .main__info-h2-span {}
+            }
+
+            .number {
+                display: none;
+                column-gap: 0.5rem;
+                color: $id-primary-color;
+            }
+
+            .total {
+                justify-content: space-evenly;
+                padding: 0.7rem;
+                border: 1px solid $primary-color;
+                border-radius: 8px;
+                background-color: rgb(121, 148, 164, 0.6);
+
+                .main__info-h2 {
+                    width: auto;
+                    color: $primary-color;
+                }
+
+                .main__info-h2-span {
+                    width: fit-content;
+                    text-align: center;
+                    letter-spacing: 1px;
+                }
+            }
+        }
+
+        .main__payment {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            gap: 1rem;
+
+            .main__payment-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+
+                .main__payment-label {}
+
+                .main__payment-checkbox {}
+            }
+        }
+
+        .d-none {
+            display: none;
+        }
+    }
+}

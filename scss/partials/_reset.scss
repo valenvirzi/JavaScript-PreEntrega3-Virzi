@@ -1,0 +1,28 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Roboto", sans-serif;
+}
+
+img,
+picture,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+label,
+button {
+    cursor: pointer;
+}

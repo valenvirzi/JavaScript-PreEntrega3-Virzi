@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Remitos</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:title" content="Simulador de Remitos">
+    <meta property="og:description" content="Calcula más rápido tus facturaciones">
+    <meta property="og:image" content="https://http2.mlstatic.com/D_NQ_NP_948433-MLA30495500601_052019-V.jpg">
+    <meta name="author" content="Valentin Virzi">
+</head>
+<body>
+    <header class="header">
+        <label class="header__label" for="colorPicker">Elige tu color del texto:</label>
+        <input class="header__input" type="color" id="colorPicker">
+    </header>
+    <main class="main">
+        <section class="main__account d-none">
+            <h2 class="main__account-h2 d-none" id="paymentH2">
+                Pagó <span class="main__account-h2-span" id="paymentAmount"></span>
+            </h2>
+            <h2 class="main__account-h2 d-none" id="owesH2">
+                Debe <span class="main__account-h2-span" id="owesAmount">35000</span>
+            </h2>
+        </section>
+        <section class="main__client">
+            <input class="main__client-input textColor" 
+            type="date" 
+            name="currentDate" 
+            id="currentDate">
+            <input class="main__client-input" 
+            type="text" 
+            name="companyName" 
+            id="companyName" 
+            placeholder="Empresa">
+            <input class="main__client-input" 
+            type="text" 
+            name="contactName" 
+            id="contactName" 
+            placeholder="Nombre">
+            <input class="main__client-input" 
+            type="text" 
+            name="address" 
+            id="address" 
+            placeholder="Dirección">
+            <input class="main__client-input" 
+            type="text" 
+            name="city" 
+            id="city" 
+            placeholder="Localidad">
+        </section>
+        <section class="main__products">
+            <h3 class="main__products-h3 textColor">Cant.</h3>
+            <h3 class="main__products-h3 textColor">Producto</h3>
+            <h3 class="main__products-h3 textColor">Precio</h3>
+            <h3 class="main__products-h3 textColor">Subtotal</h3>
+            <form class="main__products-div" id="itemContainerForm">
+            </form>
+            <button class="main__products-btn" type="button" form="itemContainerForm" id="btnAddProduct">
+                + Añadir otro producto...
+            </button>
+            <h3 class="main__products-item-h3 subtotal d-none textColor">Subtotal:</h3>
+            <span class="main__products-item main__products-item-span subtotal d-none" id="subtotalAmount"></span>
+            <h3 class="main__products-item-h3 iva d-none textColor">IVA (21%):</h3>
+            <span class="main__products-item main__products-item-span iva d-none" id="ivaAmount"></span>
+            <h3 class="main__products-item-h3 prevDebt d-none textColor">Saldo anterior:</h3>
+            <span class="main__products-item main__products-item-span prevDebt d-none" id="prevDebtAmount"></span>
+        </section>
+        <section class="main__info">
+            <div class="main__info-section number textColor">
+                <h2 class="main__info-h2 textColor">ID N°: </h2>
+                <span class="main__info-h2-span">00001</span>
+            </div>
+            <div class="main__info-section total">
+                <h2 class="main__info-h2 textColor">TOTAL: </h2>
+                <span class="main__info-h2-span" id="totalAmount"></span>
+            </div>
+        </section>
+        <section class="main__payment">
+            <div class="main__payment-section">
+                <label class="main__payment-label" for="iva">IVA:</label>
+                <input class="main__payment-checkbox" 
+                type="checkbox"
+                name="iva"
+                id="iva">
+            </div>
+            <div class="main__payment-section">
+                <label class="main__payment-label" for="prevDebt">Saldo:</label>
+                <input class="main__payment-checkbox" 
+                type="checkbox" 
+                name="prevDebt" 
+                id="prevDebt">
+            </div>
+            <div class="main__payment-section">
+                <label class="main__payment-label" for="paid">Pagó:</label>
+                <input class="main__payment-checkbox" 
+                type="checkbox" 
+                name="paid" 
+                id="paid">
+            </div>
+            <div class="main__payment-section">
+                <label class="main__payment-label" for="owes">Debe:</label>
+                <input class="main__payment-checkbox" 
+                type="checkbox" 
+                name="owes" 
+                id="owes">
+            </div>
+        </section>
+    </main>
+</body>
+<script src="js/main.js"></script>
+</html>
